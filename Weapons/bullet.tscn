@@ -60,3 +60,9 @@ shape = SubResource("SphereShape3D_6k62y")
 
 [node name="MultiplayerSynchronizer" type="MultiplayerSynchronizer" parent="." unique_id=1419165694]
 replication_config = SubResource("SceneReplicationConfig_cv5v3")
+
+[node name="Timer" type="Timer" parent="." unique_id=1108140616]
+wait_time = 4.0
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

@@ -1,0 +1,7 @@
+res://Player/rilfedeath.anim
+res://Player/rifleIdle.anim
+res://Player/rifleJump.anim
+res://Player/riflerun.anim
+res://main.tscn
+res://Weapons/bullet.tscn
+res://Weapons/bullet.gd

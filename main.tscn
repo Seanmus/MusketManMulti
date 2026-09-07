@@ -1,10 +1,9 @@
 [gd_scene format=3 uid="uid://bi1cueradbn5"]
 
 [ext_resource type="Script" uid="uid://dokr4f0y8xxn8" path="res://main.gd" id="1_ig7tw"]
-[ext_resource type="PackedScene" uid="uid://dpaqrwtjbvv7l" path="res://player.tscn" id="2_1bvp3"]
+[ext_resource type="PackedScene" uid="uid://dpaqrwtjbvv7l" path="res://Player/player.tscn" id="2_1bvp3"]
 [ext_resource type="Material" uid="uid://b1v68px3svo81" path="res://Materials/wall.tres" id="2_h2yge"]
 [ext_resource type="Material" uid="uid://bfmlvh1kbt5o3" path="res://Materials/Pillar.tres" id="3_1bvp3"]
-[ext_resource type="PackedScene" uid="uid://beiok0vx0tufp" path="res://Weapons/bullet.tscn" id="5_lquwl"]
 [ext_resource type="Script" uid="uid://dkkxkj8smtfhk" path="res://bullet_spawner.gd" id="6_7mycd"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_sweqy"]
@@ -110,9 +109,6 @@ grow_horizontal = 2
 grow_vertical = 2
 text = "Join
 "
-
-[node name="Bullet" parent="." unique_id=578586797 instance=ExtResource("5_lquwl")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.285343, -1.0535121, 1.239747)
 
 [node name="BulletSpawner" type="MultiplayerSpawner" parent="." unique_id=1465117266]
 _spawnable_scenes = PackedStringArray("uid://beiok0vx0tufp")
