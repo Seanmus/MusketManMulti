@@ -1,0 +1,129 @@
+[gd_scene format=3 uid="uid://bi1cueradbn5"]
+
+[ext_resource type="Script" uid="uid://dokr4f0y8xxn8" path="res://main.gd" id="1_ig7tw"]
+[ext_resource type="PackedScene" uid="uid://dpaqrwtjbvv7l" path="res://player.tscn" id="2_1bvp3"]
+[ext_resource type="Material" uid="uid://b1v68px3svo81" path="res://Materials/wall.tres" id="2_h2yge"]
+[ext_resource type="Material" uid="uid://bfmlvh1kbt5o3" path="res://Materials/Pillar.tres" id="3_1bvp3"]
+[ext_resource type="PackedScene" uid="uid://beiok0vx0tufp" path="res://Weapons/bullet.tscn" id="5_lquwl"]
+[ext_resource type="Script" uid="uid://dkkxkj8smtfhk" path="res://bullet_spawner.gd" id="6_7mycd"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_sweqy"]
+albedo_color = Color(0.997201, 0.41946107, 0.09092306, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_6k62y"]
+size = Vector3(547.41504, 13.796448, 469.79968)
+
+[node name="Main" type="Node3D" unique_id=744967066]
+script = ExtResource("1_ig7tw")
+player_scene = ExtResource("2_1bvp3")
+
+[node name="Bullets" type="Node" parent="." unique_id=898234246]
+
+[node name="MultiplayerSpawner" type="MultiplayerSpawner" parent="." unique_id=1404437826]
+_spawnable_scenes = PackedStringArray("uid://dpaqrwtjbvv7l")
+spawn_path = NodePath("..")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=730086138]
+transform = Transform3D(1, 0, 0, 0, 0.8698565, 0.4933049, 0, -0.4933049, 0.8698565, 0, 19.705729, 61.121353)
+light_energy = 0.407
+shadow_enabled = true
+sky_mode = 1
+
+[node name="Floor" type="CSGBox3D" parent="." unique_id=1583504656]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.626434, -22.269056, 0.3299713)
+use_collision = true
+size = Vector3(75.37109, 28.380371, 50)
+material = SubResource("StandardMaterial3D_sweqy")
+
+[node name="Floor2" type="CSGBox3D" parent="." unique_id=630649988]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.484589, -4.8225555, 23.129265)
+use_collision = true
+size = Vector3(75.0874, 22.49707, 3.805664)
+material = ExtResource("2_h2yge")
+
+[node name="Floor3" type="CSGBox3D" parent="." unique_id=1091798878]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.05911255, -4.7893524, -22.792946)
+use_collision = true
+size = Vector3(50, 22.430664, 3.805664)
+material = ExtResource("2_h2yge")
+
+[node name="Floor4" type="CSGBox3D" parent="." unique_id=168995268]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.485516, -2.6343231, -11.217518)
+use_collision = true
+size = Vector3(4.39624, 18.120605, 3.805664)
+material = ExtResource("3_1bvp3")
+
+[node name="Floor5" type="CSGBox3D" parent="." unique_id=1046141285]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.897386, -4.046921, -13.1509)
+use_collision = true
+size = Vector3(4.39624, 20.9458, 3.805664)
+material = ExtResource("3_1bvp3")
+
+[node name="Floor6" type="CSGBox3D" parent="." unique_id=106311720]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.640533, -1.255661, 9.596478)
+use_collision = true
+size = Vector3(4.39624, 15.363281, 3.805664)
+material = ExtResource("3_1bvp3")
+
+[node name="Floor7" type="CSGBox3D" parent="." unique_id=1853096721]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.004166, -3.9133759, 9.596478)
+use_collision = true
+size = Vector3(4.39624, 20.67871, 3.805664)
+material = ExtResource("3_1bvp3")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=395960035]
+position = Vector2(576, 324)
+
+[node name="Ui" type="Control" parent="." unique_id=660754005]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1152.0
+offset_bottom = 648.0
+
+[node name="Host" type="Button" parent="Ui" unique_id=1656977745]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -162.0
+offset_top = -77.0
+offset_right = 157.0
+offset_bottom = -8.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Host"
+
+[node name="Join" type="Button" parent="Ui" unique_id=1054735204]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -162.0
+offset_top = 6.0
+offset_right = 157.0
+offset_bottom = 75.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Join
+"
+
+[node name="Bullet" parent="." unique_id=578586797 instance=ExtResource("5_lquwl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.285343, -1.0535121, 1.239747)
+
+[node name="BulletSpawner" type="MultiplayerSpawner" parent="." unique_id=1465117266]
+_spawnable_scenes = PackedStringArray("uid://beiok0vx0tufp")
+spawn_path = NodePath("../Bullets")
+script = ExtResource("6_7mycd")
+
+[node name="Death" type="StaticBody3D" parent="." unique_id=1164311341 groups=["danger"]]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Death" unique_id=1533596318]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.952698, -50.147522, -77.30283)
+shape = SubResource("BoxShape3D_6k62y")
+
+[connection signal="pressed" from="Ui/Host" to="." method="_on_host_pressed"]
+[connection signal="pressed" from="Ui/Join" to="." method="_on_join_pressed"]
