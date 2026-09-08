@@ -48,8 +48,11 @@ properties/0/path = NodePath(".:position")
 properties/0/spawn = true
 properties/0/replication_mode = 1
 
+[sub_resource type="SphereShape3D" id="SphereShape3D_76bxw"]
+radius = 0.9984903
+
 [node name="Bullet" type="StaticBody3D" unique_id=578586797 groups=["danger"]]
-transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0, 0)
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
 script = ExtResource("1_cv5v3")
 
 [node name="Sphere" type="MeshInstance3D" parent="." unique_id=382911369]
@@ -65,4 +68,10 @@ replication_config = SubResource("SceneReplicationConfig_cv5v3")
 wait_time = 4.0
 autostart = true
 
+[node name="BounceCollider" type="Area3D" parent="." unique_id=1986262256]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="BounceCollider" unique_id=778396255]
+shape = SubResource("SphereShape3D_76bxw")
+
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="body_entered" from="BounceCollider" to="." method="_on_bounce_collider_body_entered"]
