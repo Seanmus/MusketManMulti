@@ -36,8 +36,9 @@ var isFinalLevel
 var isCrossHairEnabled = true
 
 
+var scores : Dictionary[String, int] = {}
 
-
+signal score_changed
 
 
 func _ready():
@@ -45,6 +46,20 @@ func _ready():
 
 
 
+@rpc("any_peer", "call_local", "reliable")
+func _update_score(id, score):
+	if not multiplayer.is_server():
+		return
+		
+	scores[id] += score
+	print(scores)
+	score_changed.emit()
+
+@rpc("any_peer", "call_local", "reliable")
+func _get_score():
+	if not multiplayer.is_server():
+		return
+	return scores
 
 
 func _physics_process(delta):

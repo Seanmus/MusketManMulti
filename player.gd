@@ -12,6 +12,10 @@ var landing : bool
 var coyoteTime : bool
 var jumped : bool
 var startedMoving : bool
+var gamer_tag = "CoolGuy"
+
+
+var multiplayer_id = 0
 @export var dead : bool = false
 @export var multiplayer_velocity : Vector3
 @export var multiplayer_grounded: bool = false
@@ -24,6 +28,10 @@ var startedMoving : bool
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
+
+@rpc("any_peer", "call_local", "reliable")
+func _set_gamer_tag(tag):
+	$GamerTag.text = tag
 
 func _enter_tree() -> void:
 	set_multiplayer_authority(name.to_int())
@@ -128,6 +136,9 @@ func _Respawn():
 func _on_hurt_box_body_entered(body: Node3D) -> void:
 	if is_multiplayer_authority():
 		if body.is_in_group("danger"):
+			print("Name " + str(name))
+			#print("MultiplayerId " + str(multiplayer_id))
+			Manager._update_score.rpc(name, 1)
 			dead = true
 			print("that hurt!")
 			$DeadPanel.visible = true

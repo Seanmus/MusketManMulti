@@ -1,6 +1,7 @@
 extends StaticBody3D
 
 var speed = 125
+var ownerId = 0
 
 func _physics_process(delta: float) -> void:
 	var forward = global_transform.basis.z

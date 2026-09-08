@@ -6,3 +6,6 @@ res://trombone.tscn
 res://main.tscn
 res://player.gd
 res://Player/pause_panel.gd
+res://Manager.gd
+res://Weapons/bullet.gd
+res://Player/ui.gd

@@ -1,10 +1,12 @@
 res://Materials/Pillar.tres::7217cf945312d44a76bf74b947bde10e::1788804295::res://.godot/exported/133200997/export-70bac46677a3e8d3c848cbb18224197c-Pillar.res
 res://Materials/wall.tres::69ad91f4dde6a13aaf3f958ea5e7f8cc::1788804295::res://.godot/exported/133200997/export-5ef3f7a47fb72eb4e0b62b677d3a1081-wall.res
-res://Player/player.tscn::81f57aef41dcfcc0c5bd56881135561b::1788826434::res://.godot/exported/133200997/export-d267b47f7e81a3258979164d56d0d9c2-player.scn
-res://Weapons/bullet.tscn::4bb8d8053024ad80b9a031d289b0d8fd::1788825308::res://.godot/exported/133200997/export-b2db45cc479b4b39c7866ac5e1af5a84-bullet.scn
+res://Player/player.tscn::e6a72247409369c1c85aee4b5ceb0687::1788835284::res://.godot/exported/133200997/export-d267b47f7e81a3258979164d56d0d9c2-player.scn
+res://Weapons/bullet.tscn::4bb8d8053024ad80b9a031d289b0d8fd::1788834105::res://.godot/exported/133200997/export-b2db45cc479b4b39c7866ac5e1af5a84-bullet.scn
 res://WorldBlocks/barrel.tscn::315013ce212ad93aa32b835166faee09::1788807049::res://.godot/exported/133200997/export-500e5563adf0709d6ee05f5c0b6dade1-barrel.scn
 res://WorldBlocks/castle.tscn::c6c20436c3a7060b9dbc3238d2af2e2f::1788807928::res://.godot/exported/133200997/export-c21cbde9c6638372c8e55b9f545ad1b3-castle.scn
 res://WorldBlocks/bridge.tscn::17d54f27fd5f6538f387eff05afcf066::1788808003::res://.godot/exported/133200997/export-55e16bbe0696ec59dd0a5e1f7ceda668-bridge.scn
 res://WorldBlocks/tower.tscn::0c0399c04b33c3f04f038c118a869fc8::1788807513::res://.godot/exported/133200997/export-3b5b063740d29ee96824f1fbe804402d-tower.scn
 res://basic_world.tscn::d312b3da8ea3184e51dbe0a88202ea75::1788806437::res://.godot/exported/133200997/export-22a31c8ffacdaf0566a3033b38f72227-basic_world.scn
-res://main.tscn::5dfe0db535de3e4afa170558ce938812::1788825353::res://.godot/exported/133200997/export-3070c538c03ee49b7677ff960a3f5195-main.scn
+res://main.tscn::ed9320f2b093fa6a755bda6f3b0d14df::1788835136::res://.godot/exported/133200997/export-3070c538c03ee49b7677ff960a3f5195-main.scn
+res://Player/musket.tscn::3d3c6de4beb2fbc9a805aed3def3986d::1788828778::res://.godot/exported/133200997/export-767176c2d770c910b5fdc34a66c120bc-musket.scn
+res://trombone.tscn::90cf83dc568d01bec0798c0794a88457::1788830306::res://.godot/exported/133200997/export-f8bb003376f13a53baf30c3de267bc03-trombone.scn

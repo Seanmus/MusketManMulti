@@ -12,6 +12,7 @@
 [ext_resource type="Animation" uid="uid://3dgcn73cinmf" path="res://Player/rilfedeath.anim" id="5_b26j0"]
 [ext_resource type="AudioStream" uid="uid://r1yi2fowrqhh" path="res://Audio/flareGunShot.wav" id="5_x3vf3"]
 [ext_resource type="Script" uid="uid://d057pouio7w8n" path="res://Player/pause_panel.gd" id="12_5htga"]
+[ext_resource type="Script" uid="uid://btptlq2xjkr3w" path="res://Player/ui.gd" id="13_p5o4e"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mffob"]
 resource_name = "Bulb"
@@ -949,19 +950,19 @@ anchor_right = 0.22000001
 anchor_bottom = 0.21000001
 offset_right = 0.5599823
 offset_bottom = -0.08000183
+script = ExtResource("13_p5o4e")
 
 [node name="YourScore" type="Label" parent="UI" unique_id=1465641959]
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 23.0
-text = "Your Score:"
+text = "Player 0 Score 0"
 
-[node name="HighScore" type="Label" parent="UI" unique_id=1584687350]
-layout_mode = 0
-offset_top = 24.0
-offset_right = 48.0
-offset_bottom = 47.0
-text = "Other Score:"
+[node name="GamerTag" type="Label3D" parent="." unique_id=690855271]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.6238544, 0)
+pixel_size = 0.01
+billboard = 1
+text = "CoolPerson"
 
 [connection signal="timeout" from="CharacterModel/Skeleton3D/BoneAttachment3D/Musket/CanShoot" to="CharacterModel/Skeleton3D/BoneAttachment3D/Musket" method="_on_can_shoot_timeout"]
 [connection signal="body_entered" from="HurtBox" to="." method="_on_hurt_box_body_entered"]

@@ -88,34 +88,46 @@ anchors_preset = 0
 offset_right = 1152.0
 offset_bottom = 648.0
 
-[node name="Host" type="Button" parent="Ui" unique_id=1656977745]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -162.0
-offset_top = -77.0
-offset_right = 157.0
-offset_bottom = -8.0
-grow_horizontal = 2
-grow_vertical = 2
+[node name="VBoxContainer" type="VBoxContainer" parent="Ui" unique_id=165563683]
+layout_mode = 0
+offset_right = 1153.0
+offset_bottom = 648.0
+alignment = 1
+
+[node name="Label3" type="Label" parent="Ui/VBoxContainer" unique_id=1057394865]
+layout_mode = 2
+theme_override_font_sizes/font_size = 64
+text = "Trumpador"
+horizontal_alignment = 1
+
+[node name="Label" type="Label" parent="Ui/VBoxContainer" unique_id=1639724959]
+layout_mode = 2
+text = "Enter Host IP, your ip to host or the hosts IP to Join"
+
+[node name="IPEnter" type="TextEdit" parent="Ui/VBoxContainer" unique_id=1072320696]
+layout_mode = 2
+size_flags_vertical = 3
+text = "127.0.0.1"
+placeholder_text = "127.0.0.1"
+
+[node name="Label2" type="Label" parent="Ui/VBoxContainer" unique_id=434235664]
+layout_mode = 2
+text = "Enter your cool gamertag"
+
+[node name="Player_Name" type="TextEdit" parent="Ui/VBoxContainer" unique_id=1007002169]
+layout_mode = 2
+size_flags_vertical = 3
+text = "CoolGuy17"
+placeholder_text = "CoolGuy17"
+
+[node name="Host" type="Button" parent="Ui/VBoxContainer" unique_id=1656977745]
+layout_mode = 2
+size_flags_vertical = 3
 text = "Host"
 
-[node name="Join" type="Button" parent="Ui" unique_id=1054735204]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -162.0
-offset_top = 6.0
-offset_right = 157.0
-offset_bottom = 75.0
-grow_horizontal = 2
-grow_vertical = 2
+[node name="Join" type="Button" parent="Ui/VBoxContainer" unique_id=1054735204]
+layout_mode = 2
+size_flags_vertical = 3
 text = "Join
 "
 
@@ -212,5 +224,5 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -66.063614, 33.88852, 0)
 shadow_enabled = true
 omni_range = 68.58
 
-[connection signal="pressed" from="Ui/Host" to="." method="_on_host_pressed"]
-[connection signal="pressed" from="Ui/Join" to="." method="_on_join_pressed"]
+[connection signal="pressed" from="Ui/VBoxContainer/Host" to="." method="_on_host_pressed"]
+[connection signal="pressed" from="Ui/VBoxContainer/Join" to="." method="_on_join_pressed"]

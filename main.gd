@@ -14,7 +14,7 @@ func _on_host_pressed() -> void:
 	UI.visible = false
 
 func _on_join_pressed() -> void:
-	peer.create_client("127.0.0.1", 25565)
+	peer.create_client($Ui/VBoxContainer/IPEnter.text, 25565)
 	#peer.create_client("50.71.200.48", 25565)
 	multiplayer.multiplayer_peer = peer
 	cam.enabled = false
@@ -23,6 +23,9 @@ func _on_join_pressed() -> void:
 func add_player(id = 1):
 	var player = player_scene.instantiate()
 	player.name = str(id)
+	player._set_gamer_tag.rpc($Ui/VBoxContainer/Player_Name.text)
+	Manager.scores.get_or_add(player.name, 0)
+	print(Manager.scores)
 	call_deferred("add_child", player)
 	
 func _exit_game(id):
