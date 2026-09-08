@@ -1,6 +1,7 @@
 [gd_scene format=4 uid="uid://dpaqrwtjbvv7l"]
 
 [ext_resource type="Script" uid="uid://bjjpoagdpbfjk" path="res://player.gd" id="1_gb3mg"]
+[ext_resource type="PackedScene" uid="uid://oc75nyesc7vw" path="res://trombone.tscn" id="2_apopc"]
 [ext_resource type="AudioStream" uid="uid://cy0sm0qibx5sj" path="res://landed.wav" id="2_bupsb"]
 [ext_resource type="PackedScene" uid="uid://b8c1v7yqdb3j3" path="res://Weapons/Musket.glb" id="2_i3pqv"]
 [ext_resource type="Animation" uid="uid://dwqv3jmcx0wud" path="res://Player/riflerun.anim" id="3_1jxqw"]
@@ -10,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://beiok0vx0tufp" path="res://Weapons/bullet.tscn" id="4_sweqy"]
 [ext_resource type="Animation" uid="uid://3dgcn73cinmf" path="res://Player/rilfedeath.anim" id="5_b26j0"]
 [ext_resource type="AudioStream" uid="uid://r1yi2fowrqhh" path="res://Audio/flareGunShot.wav" id="5_x3vf3"]
+[ext_resource type="Script" uid="uid://d057pouio7w8n" path="res://Player/pause_panel.gd" id="12_5htga"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mffob"]
 resource_name = "Bulb"
@@ -459,6 +461,9 @@ radial_segments = 4
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6k62y"]
 bg_color = Color(0.43605796, 8.663535e-07, 1.6845763e-07, 1)
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_apopc"]
+bg_color = Color(0.2454328, 0.21020728, 0.2024385, 1)
+
 [node name="Player" type="CharacterBody3D" unique_id=179274798 groups=["player"]]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
 platform_on_leave = 1
@@ -766,8 +771,13 @@ transform = Transform3D(-0.09482539, -0.0048395395, 0.99548197, 0.99506533, 0.02
 bone_name = "mixamorig_RightHand"
 bone_idx = 22
 
+[node name="Trombone3" parent="CharacterModel/Skeleton3D/BoneAttachment3D" unique_id=2134801314 instance=ExtResource("2_apopc")]
+transform = Transform3D(0.12508705, 1.9889227, -0.16892725, -1.9871848, 0.10811958, -0.19848795, -0.18825662, 0.18025923, 1.982943, -0.18288207, 4.248945, 0.62471044)
+
 [node name="Musket" parent="CharacterModel/Skeleton3D/BoneAttachment3D" unique_id=809833358 instance=ExtResource("2_i3pqv")]
+process_mode = 4
 transform = Transform3D(-0.21193773, 3.065133, -0.16578084, 3.0570261, 0.22579277, 0.2665392, 0.27768335, -0.14634934, -3.0608678, -0.22347784, 9.248014, 1.1139649)
+visible = false
 script = ExtResource("3_hqtel")
 bullet = ExtResource("4_sweqy")
 
@@ -835,7 +845,7 @@ mesh = SubResource("BoxMesh_eksmw")
 material = SubResource("StandardMaterial3D_wpswo")
 
 [node name="Pivot" type="Node3D" parent="." unique_id=496728731]
-transform = Transform3D(0.99999976, 0, 0, 0, 0.99999976, 0, 0, 0, 0.99999976, 0, 0.43957448, -0.86632836)
+transform = Transform3D(0.98055184, 0, -0.19625947, 0, 0.99999976, 0, 0.19625947, 0, 0.98055184, -0.4819739, 0.43957448, 0.3475142)
 
 [node name="Camera3d" type="Camera3D" parent="Pivot" unique_id=1947388487]
 transform = Transform3D(2.732, 0, 0, 0, 2.681423, 0.5232552, 0, -0.5232552, 2.681423, 0, 1.30256, -0.154819)
@@ -878,11 +888,83 @@ theme_override_font_sizes/font_size = 48
 text = "You Kinda Died Bro, Get better next time
 You'll respawn in like 5 seconds"
 
+[node name="PausePanel" type="Panel" parent="." unique_id=1223099800]
+process_mode = 3
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -534.0
+offset_top = -292.5
+offset_right = 534.0
+offset_bottom = 292.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_apopc")
+script = ExtResource("12_5htga")
+
+[node name="Label" type="Label" parent="PausePanel" unique_id=498525186]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -471.5
+offset_top = -68.5
+offset_right = 471.5
+offset_bottom = 68.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 48
+text = "The Game is Paused, 
+do you wanna leave or nah?"
+horizontal_alignment = 1
+
+[node name="QuitButton" type="Button" parent="PausePanel" unique_id=843135230]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -137.5
+offset_top = -215.0
+offset_right = 137.5
+offset_bottom = -114.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "Quit Game I guess
+"
+
 [node name="RespawnTimer" type="Timer" parent="." unique_id=1381049576]
 wait_time = 3.0
 one_shot = true
 
+[node name="UI" type="Panel" parent="." unique_id=399105856]
+anchors_preset = -1
+anchor_right = 0.22000001
+anchor_bottom = 0.21000001
+offset_right = 0.5599823
+offset_bottom = -0.08000183
+
+[node name="YourScore" type="Label" parent="UI" unique_id=1465641959]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+text = "Your Score:"
+
+[node name="HighScore" type="Label" parent="UI" unique_id=1584687350]
+layout_mode = 0
+offset_top = 24.0
+offset_right = 48.0
+offset_bottom = 47.0
+text = "Other Score:"
+
 [connection signal="timeout" from="CharacterModel/Skeleton3D/BoneAttachment3D/Musket/CanShoot" to="CharacterModel/Skeleton3D/BoneAttachment3D/Musket" method="_on_can_shoot_timeout"]
 [connection signal="body_entered" from="HurtBox" to="." method="_on_hurt_box_body_entered"]
 [connection signal="timeout" from="coyoteTimer" to="." method="_on_coyote_timer_timeout"]
+[connection signal="button_down" from="PausePanel/QuitButton" to="PausePanel" method="_on_quit_button_button_down"]
 [connection signal="timeout" from="RespawnTimer" to="." method="_Respawn"]

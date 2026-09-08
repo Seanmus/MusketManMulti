@@ -4,7 +4,7 @@ extends CharacterBody3D
 const SPEED = 20
 var currentSpeed = SPEED
 const MAXSPEED = 100
-const JUMP_VELOCITY = 4.4
+const JUMP_VELOCITY = 13
 var mouse_sensitivty = Manager.mouseSensitivity
 var controller_sensitivity = 0.05
 var spawnPos
@@ -52,8 +52,6 @@ func _physics_process(delta):
 		return
 	if dead:
 		return
-	if Input.is_action_just_pressed("click"):
-		print("shooting")
 	cam.current = is_multiplayer_authority()
 	#var cameraInput = Input.get_vector("look_left", "look_right", "look_up", "look_down")
 	#if cameraInput:
@@ -66,9 +64,9 @@ func _physics_process(delta):
 			coyoteTime = true
 			coyoteTimer.start()
 		landing = false
-		velocity.y -= gravity * delta
+		velocity.y -= gravity * delta * 2
 		if velocity.y <= 0:
-			velocity.y -= gravity * delta * 0.5
+			velocity.y -= gravity * delta * 3
 	else:
 		if !landing:
 			landing = true

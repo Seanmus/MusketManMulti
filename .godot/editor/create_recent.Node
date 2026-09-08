@@ -1,3 +1,9 @@
+Button
+Label
+Panel
+OmniLight3D
+AreaLight3D
+Marker3D
 AudioStreamPlayer3D
 AudioStreamPlayer
 CollisionShape3D

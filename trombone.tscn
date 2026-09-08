@@ -1,0 +1,29 @@
+[gd_scene format=3 uid="uid://oc75nyesc7vw"]
+
+[ext_resource type="PackedScene" uid="uid://b16yrvvvwiuut" path="res://Weapons/Trombone.glb" id="1_c0i3p"]
+[ext_resource type="Script" uid="uid://cymv64kmfvr2f" path="res://Weapons/musket.gd" id="2_mnig5"]
+[ext_resource type="PackedScene" uid="uid://beiok0vx0tufp" path="res://Weapons/bullet.tscn" id="3_oe1wm"]
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_oe1wm"]
+data = PackedVector3Array(0, -1, -1, 0.866, -1, 0.5, 0, 1, 0, 0, -1, -1, -0.866, -1, 0.5, 0.866, -1, 0.5, 0.866, -1, 0.5, -0.866, -1, 0.5, 0, 1, 0, -0.866, -1, 0.5, 0, -1, -1, 0, 1, 0)
+
+[node name="Trombone2" unique_id=2134801314 instance=ExtResource("1_c0i3p")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
+script = ExtResource("2_mnig5")
+bullet = ExtResource("3_oe1wm")
+
+[node name="SpawnPoint" type="Marker3D" parent="." index="1" unique_id=10909074]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -0.23648468, 0.44444686, 0)
+
+[node name="CanShoot" type="Timer" parent="." index="2" unique_id=1360614152]
+wait_time = 3.0
+
+[node name="Cone" parent="." index="4" unique_id=1824158300]
+transform = Transform3D(1.0898726e-08, -0.89716923, 1.9153774e-08, 0.15205875, -1.7273548e-08, -0.08584242, 0.101549834, 1.221528e-07, 0.12853879, -1.3830884, -0.06468286, 0)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Cone" index="0" unique_id=1701643535 groups=["danger"]]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Cone/StaticBody3D" index="0" unique_id=1611320126]
+shape = SubResource("ConcavePolygonShape3D_oe1wm")
+
+[connection signal="timeout" from="CanShoot" to="." method="_on_can_shoot_timeout"]

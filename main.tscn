@@ -202,5 +202,15 @@ transform = Transform3D(15, 0, 0, 0, 15, 0, 0, 0, 15, -127.35722, -12.507266, 67
 [node name="Castle" parent="." unique_id=1783118410 instance=ExtResource("8_kek77")]
 transform = Transform3D(-9.137094e-08, 0, -2.0903234, 0, 2.0903234, 0, 2.0903234, 0, -9.137094e-08, -192.73143, -8.745633, 44.543106)
 
+[node name="OmniLight3D" type="OmniLight3D" parent="." unique_id=1733081934]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -66.063614, 0, 0)
+shadow_enabled = true
+omni_range = 68.58
+
+[node name="OmniLight3D2" type="OmniLight3D" parent="." unique_id=679755343]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -66.063614, 33.88852, 0)
+shadow_enabled = true
+omni_range = 68.58
+
 [connection signal="pressed" from="Ui/Host" to="." method="_on_host_pressed"]
 [connection signal="pressed" from="Ui/Join" to="." method="_on_join_pressed"]

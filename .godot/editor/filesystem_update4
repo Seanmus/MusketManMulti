@@ -2,3 +2,7 @@ res://Player/player.tscn
 res://main.gd
 res://Weapons/musket.gd
 res://Weapons/bullet.tscn
+res://trombone.tscn
+res://main.tscn
+res://player.gd
+res://Player/pause_panel.gd

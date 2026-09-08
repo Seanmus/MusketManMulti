@@ -1,26 +1,28 @@
 78098b89c88a74ebe8c20117b8754620
-::res://::1788826194
+::res://::1788829658
 basic_world.tscn::PackedScene::8617527779466443445::1788806437::0::1::::<><><>0<>0<><>::uid://dpaqrwtjbvv7l::::res://Player/player.tscn<>uid://b1v68px3svo81::::res://Materials/wall.tres<>uid://bfmlvh1kbt5o3::::res://Materials/Pillar.tres
 bullet_spawner.gd::GDScript::7883209138296225892::1788804295::0::1::::<>MultiplayerSpawner<><>0<>0<><>::
-export_presets.cfg::TextFile::-1::1788825835::0::1::::<><><>0<>0<><>::
+export_presets.cfg::TextFile::-1::1788826444::0::1::::<><><>0<>0<><>::
 icon.svg::CompressedTexture2D::3611266883552809290::1788804295::1788806230::1::::<><><>0<>0<>9d166530b6d812a133353a3d86ffd74b<>res://.godot/imported/icon.svg-218a8f2b3041327d8a5756f3a245f83b.ctex::
 landed.wav::AudioStreamWAV::6510098732113512109::1788804295::1788806230::1::::<><><>0<>0<>a33fa3cacb3d74140c0efe4b7661875f<>res://.godot/imported/landed.wav-e996f47e9162afed061aaa316718baa4.sample::
-main.gd::GDScript::8163633918824967615::1788824756::0::1::::<>Node3D<><>0<>0<><>::
-main.tscn::PackedScene::88287136488990740::1788825353::0::1::::<><><>0<>0<><>::uid://dokr4f0y8xxn8::::res://main.gd<>uid://dpaqrwtjbvv7l::::res://Player/player.tscn<>uid://b1v68px3svo81::::res://Materials/wall.tres<>uid://b57kfshaub021::::res://WorldBlocks/barrel.tscn<>uid://dkkxkj8smtfhk::::res://bullet_spawner.gd<>uid://cfvphicx0xjg8::::res://WorldBlocks/tower.tscn<>uid://s0o7w4t0kvlf::::res://WorldBlocks/bridge.tscn<>uid://bdjkj0qiuly1::::res://WorldBlocks/castle.tscn
+main.gd::GDScript::8163633918824967615::1788827134::0::1::::<>Node3D<><>0<>0<><>::
+main.tscn::PackedScene::88287136488990740::1788829658::0::1::::<><><>0<>0<><>::uid://dokr4f0y8xxn8::::res://main.gd<>uid://dpaqrwtjbvv7l::::res://Player/player.tscn<>uid://b1v68px3svo81::::res://Materials/wall.tres<>uid://b57kfshaub021::::res://WorldBlocks/barrel.tscn<>uid://dkkxkj8smtfhk::::res://bullet_spawner.gd<>uid://cfvphicx0xjg8::::res://WorldBlocks/tower.tscn<>uid://s0o7w4t0kvlf::::res://WorldBlocks/bridge.tscn<>uid://bdjkj0qiuly1::::res://WorldBlocks/castle.tscn
 Manager.gd::GDScript::7711746222739957174::1788804295::0::1::::<>Node<><>0<>0<><>::
 player.gd::GDScript::3037635441653319208::1788806858::0::1::::<>CharacterBody3D<><>0<>0<><>::
 README.md::TextFile::-1::1788806162::0::1::::<><><>0<>0<><>::
+trombone.tscn::PackedScene::988769804111016592::1788829397::0::1::::<><><>0<>0<><>::uid://b16yrvvvwiuut::::res://Weapons/Trombone.glb<>uid://cymv64kmfvr2f::::res://Weapons/musket.gd<>uid://beiok0vx0tufp::::res://Weapons/bullet.tscn
 ui.gd::GDScript::1135861348529358206::1788804295::0::1::::<>Control<><>0<>0<><>::
-::res://Audio/::1788826284
+::res://Audio/::1788826289
 flareGunShot.wav::AudioStreamWAV::1248357084150397213::1645300094::1788826289::1::::<><><>0<>0<>9c958fc3eaa7ac1bfe46711bdaafa3be<>res://.godot/imported/flareGunShot.wav-7056dc4e62921d575eed4c3b604b64d2.sample::
 shoot.mp3::AudioStreamMP3::2821017627129800541::1675537482::1788825618::1::::<><><>0<>0<>d70e9485210fc9ad2b8a23c5b8c780e0<>res://.godot/imported/shoot.mp3-c8a71d044d0812017e49c9906470e383.mp3str::
 ::res://Materials/::1788804295
 Pillar.tres::StandardMaterial3D::2762843231809252568::1788804295::0::1::::<><><>0<>0<><>::
 wall.tres::StandardMaterial3D::4256624533769662652::1788804295::0::1::::<><><>0<>0<><>::
-::res://Player/::1788826204
+::res://Player/::1788829748
 Flying Back Death.fbx::PackedScene::5913581038112020064::1788804295::1788806230::1::::<><><>0<>0<>643d588cf2986ff33221ee691409ec77<>res://.godot/imported/Flying Back Death.fbx-22b6136540a281877ea289100b5e95bd.scn::uid://3dgcn73cinmf::::res://Player/rilfedeath.anim
 lightbulbMan.fbx::PackedScene::6740030109018317201::1788804295::1788806231::1::::<><><>0<>0<>a5a2615f819404099f5703b53a7d2cd3<>res://.godot/imported/lightbulbMan.fbx-ad5e04076ed2b835114ffb9c0588fe51.scn::
-player.tscn::PackedScene::8213097721306528567::1788826204::0::1::::<><><>0<>0<><>::uid://bjjpoagdpbfjk::::res://player.gd<>uid://cy0sm0qibx5sj::::res://landed.wav<>uid://b8c1v7yqdb3j3::::res://Weapons/Musket.glb<>uid://dwqv3jmcx0wud::::res://Player/riflerun.anim<>uid://ji0j7aacdky6::::res://Player/rifleJump.anim<>uid://3twpro3ywmvl::::res://Player/rifleIdle.anim<>uid://cymv64kmfvr2f::::res://Weapons/musket.gd<>uid://beiok0vx0tufp::::res://Weapons/bullet.tscn<>uid://3dgcn73cinmf::::res://Player/rilfedeath.anim<>uid://bggr0o42e4trh::::res://Audio/shoot.mp3
+player.tscn::PackedScene::8213097721306528567::1788829748::0::1::::<><><>0<>0<><>::uid://bjjpoagdpbfjk::::res://player.gd<>uid://oc75nyesc7vw::::res://trombone.tscn<>uid://cy0sm0qibx5sj::::res://landed.wav<>uid://b8c1v7yqdb3j3::::res://Weapons/Musket.glb<>uid://dwqv3jmcx0wud::::res://Player/riflerun.anim<>uid://ji0j7aacdky6::::res://Player/rifleJump.anim<>uid://3twpro3ywmvl::::res://Player/rifleIdle.anim<>uid://cymv64kmfvr2f::::res://Weapons/musket.gd<>uid://beiok0vx0tufp::::res://Weapons/bullet.tscn<>uid://3dgcn73cinmf::::res://Player/rilfedeath.anim<>uid://r1yi2fowrqhh::::res://Audio/flareGunShot.wav
+musket.tscn::PackedScene::317782566349276227::1788828778::0::1::::<><><>0<>0<><>::uid://cymv64kmfvr2f::::res://Weapons/musket.gd<>uid://beiok0vx0tufp::::res://Weapons/bullet.tscn<>uid://r1yi2fowrqhh::::res://Audio/flareGunShot.wav
 Rifle Aiming Idle.fbx::PackedScene::221589165664480553::1788804295::1788806231::1::::<><><>0<>0<>8959707d0e937e70b47be0f8d98181bc<>res://.godot/imported/Rifle Aiming Idle.fbx-b22794b2915f33260b4c0667e13b87d2.scn::uid://3twpro3ywmvl::::res://Player/rifleIdle.anim
 Rifle Jump.fbx::PackedScene::1673617682153700539::1788804295::1788806231::1::::<><><>0<>0<>52635429c1b4644d2b7b47735c90d224<>res://.godot/imported/Rifle Jump.fbx-7619b81dec4a1806c535ad964143c0cc.scn::uid://ji0j7aacdky6::::res://Player/rifleJump.anim
 Rifle Run.fbx::PackedScene::8795418602925760346::1788804295::1788806231::1::::<><><>0<>0<>73c64a85f1acf07a3cf83e0462e78c74<>res://.godot/imported/Rifle Run.fbx-f49acea36d5943efa8c64009f8fcd402.scn::uid://dwqv3jmcx0wud::::res://Player/riflerun.anim
@@ -28,12 +30,13 @@ rifleIdle.anim::Animation::2005874275770835637::1788806231::0::1::::<><><>0<>0<>
 rifleJump.anim::Animation::649750292489082927::1788806231::0::1::::<><><>0<>0<><>::
 riflerun.anim::Animation::8737772205628824443::1788806231::0::1::::<><><>0<>0<><>::
 rilfedeath.anim::Animation::1971849362183982257::1788806230::0::1::::<><><>0<>0<><>::
-::res://Weapons/::1788826123
+::res://Weapons/::1788829362
 bullet.gd::GDScript::6899420997265812081::1788825198::0::1::::<>StaticBody3D<><>0<>0<><>::
-bullet.tscn::PackedScene::2684560322719327825::1788825308::0::1::::<><><>0<>0<><>::uid://c5kepq6bh2jxx::::res://Weapons/bullet.gd
+bullet.tscn::PackedScene::2684560322719327825::1788827638::0::1::::<><><>0<>0<><>::uid://c5kepq6bh2jxx::::res://Weapons/bullet.gd
 cannonBall.glb::PackedScene::5061468976461786289::1788804295::1788806231::1::::<><><>0<>0<>35bb8161cafeeb6886546f208b35a85e<>res://.godot/imported/cannonBall.glb-bb00e2d66b45454ed66ec95cfe55bbdb.scn::
-musket.gd::GDScript::6483478103384795223::1788826123::0::1::::<>Node3D<><>0<>0<><>::
+musket.gd::GDScript::6483478103384795223::1788829362::0::1::::<>Node3D<><>0<>0<><>::
 Musket.glb::PackedScene::4708399141293778550::1788804295::1788806231::1::::<><><>0<>0<>86921e6a6661c966d0cca627ef705da8<>res://.godot/imported/Musket.glb-9319da56234aae3dff8e38cc84702264.scn::
+Trombone.glb::PackedScene::4276815031395701771::1788829878::1788829879::1::::<><><>0<>0<>fa1667958ec2aa3241922e8f77e0898f<>res://.godot/imported/Trombone.glb-2ed681894777a9d9b80ed86e30233e23.scn::
 ::res://WorldBlocks/::1788808003
 barrel.glb::PackedScene::1455281546740611353::1788806726::1788806728::1::::<><><>0<>0<>2a737cdefd72569134e313c3cee8b820<>res://.godot/imported/barrel.glb-1e0e5186d52b61702d6bb06b8564c9bd.scn::
 barrel.tscn::PackedScene::4558763136121903900::1788807049::0::1::::<><><>0<>0<><>::uid://uy7jljg2b4k0::::res://WorldBlocks/barrel.glb
