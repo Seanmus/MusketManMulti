@@ -35,33 +35,27 @@ var isFinalLevel
 
 var isCrossHairEnabled = true
 
+@export var scores : Dictionary[String, int] = {}
 
-var scores : Dictionary[String, int] = {}
-
-signal score_changed
 
 
 func _ready():
 	AudioServer.set_bus_volume_db(audioBus, -30)
 
-
-
-@rpc("any_peer", "call_local", "reliable")
-func _update_score(id, score):
-	if not multiplayer.is_server():
-		return
-		
-	scores[id] += score
-	print(scores)
-	score_changed.emit()
-
-@rpc("any_peer", "call_local", "reliable")
-func _get_score():
-	if not multiplayer.is_server():
-		return
-	return scores
-
+@rpc("authority", "call_local", "reliable")
+func _add_player_to_score_board(player):
+	scores.get_or_add(player, 0)
 
 func _physics_process(delta):
 	totalTime += delta
 	roundTime += delta
+	
+@rpc("authority", "call_remote", "reliable")
+func _update_score(player, object_to_get_score):	
+	scores[player.name] += 1
+	print(scores)
+	#score_changed.emit()
+
+@rpc("authority", "call_remote", "reliable")
+func _get_score():
+	return scores

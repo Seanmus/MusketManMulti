@@ -13,7 +13,7 @@ var coyoteTime : bool
 var jumped : bool
 var startedMoving : bool
 var gamer_tag = "CoolGuy"
-
+var main
 
 var multiplayer_id = 0
 @export var dead : bool = false
@@ -26,6 +26,7 @@ var multiplayer_id = 0
 @onready var speedEffect = $Pivot/SpeedEffect
 @onready var cam = $Pivot/Camera3d
 
+
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 
@@ -37,6 +38,7 @@ func _enter_tree() -> void:
 	set_multiplayer_authority(name.to_int())
 
 func _ready():
+	main = get_tree().get_root().find_child("Main")
 	Manager.roundTime = 0
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	spawnPos = global_transform
@@ -61,6 +63,7 @@ func _physics_process(delta):
 	if dead:
 		return
 	cam.current = is_multiplayer_authority()
+	$GamerTag.text = gamer_tag
 	#var cameraInput = Input.get_vector("look_left", "look_right", "look_up", "look_down")
 	#if cameraInput:
 		#pass
@@ -138,7 +141,8 @@ func _on_hurt_box_body_entered(body: Node3D) -> void:
 		if body.is_in_group("danger"):
 			print("Name " + str(name))
 			#print("MultiplayerId " + str(multiplayer_id))
-			Manager._update_score.rpc(name, 1)
+			#main._update_score.rpc(name, 1)
+			Manager._update_score(self, body)
 			dead = true
 			print("that hurt!")
 			$DeadPanel.visible = true

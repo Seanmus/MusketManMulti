@@ -15,6 +15,11 @@ albedo_color = Color(0.997201, 0.41946107, 0.09092306, 1)
 [sub_resource type="BoxShape3D" id="BoxShape3D_6k62y"]
 size = Vector3(2382.0234, 13.796448, 2329.5032)
 
+[sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_5vw27"]
+properties/0/path = NodePath(".:playerNames")
+properties/0/spawn = true
+properties/0/replication_mode = 1
+
 [node name="Main" type="Node3D" unique_id=744967066]
 script = ExtResource("1_ig7tw")
 player_scene = ExtResource("2_1bvp3")
@@ -97,7 +102,7 @@ alignment = 1
 [node name="Label3" type="Label" parent="Ui/VBoxContainer" unique_id=1057394865]
 layout_mode = 2
 theme_override_font_sizes/font_size = 64
-text = "Trumpador"
+text = "Trombone'd"
 horizontal_alignment = 1
 
 [node name="Label" type="Label" parent="Ui/VBoxContainer" unique_id=1639724959]
@@ -223,6 +228,9 @@ omni_range = 68.58
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -66.063614, 33.88852, 0)
 shadow_enabled = true
 omni_range = 68.58
+
+[node name="MultiplayerSynchronizer" type="MultiplayerSynchronizer" parent="." unique_id=656442977]
+replication_config = SubResource("SceneReplicationConfig_5vw27")
 
 [connection signal="pressed" from="Ui/VBoxContainer/Host" to="." method="_on_host_pressed"]
 [connection signal="pressed" from="Ui/VBoxContainer/Join" to="." method="_on_join_pressed"]

@@ -1,11 +1,7 @@
-res://Player/player.tscn
-res://main.gd
-res://Weapons/musket.gd
-res://Weapons/bullet.tscn
-res://trombone.tscn
 res://main.tscn
 res://player.gd
-res://Player/pause_panel.gd
-res://Manager.gd
-res://Weapons/bullet.gd
+res://main.gd
+res://Player/player.tscn
 res://Player/ui.gd
+res://Manager.gd
+res://manager.tscn

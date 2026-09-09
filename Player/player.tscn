@@ -358,6 +358,9 @@ properties/5/replication_mode = 1
 properties/6/path = NodePath("../CharacterModel/Skeleton3D/BoneAttachment3D/Musket/SpawnPoint:rotation")
 properties/6/spawn = true
 properties/6/replication_mode = 1
+properties/7/path = NodePath("/root/Manager:scores")
+properties/7/spawn = true
+properties/7/replication_mode = 1
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_of8i7"]
 
@@ -944,13 +947,14 @@ text = "Quit Game I guess
 wait_time = 3.0
 one_shot = true
 
-[node name="UI" type="Panel" parent="." unique_id=399105856]
+[node name="UI" type="Panel" parent="." unique_id=399105856 node_paths=PackedStringArray("player")]
 anchors_preset = -1
 anchor_right = 0.22000001
 anchor_bottom = 0.21000001
 offset_right = 0.5599823
 offset_bottom = -0.08000183
 script = ExtResource("13_p5o4e")
+player = NodePath("..")
 
 [node name="YourScore" type="Label" parent="UI" unique_id=1465641959]
 layout_mode = 0
@@ -959,7 +963,7 @@ offset_bottom = 23.0
 text = "Player 0 Score 0"
 
 [node name="GamerTag" type="Label3D" parent="." unique_id=690855271]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.6238544, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.9474697, -2.1451175)
 pixel_size = 0.01
 billboard = 1
 text = "CoolPerson"

@@ -1,3 +1,5 @@
+MultiplayerSynchronizer
+Node
 Label
 Label3D
 VBoxContainer
@@ -10,5 +12,3 @@ Marker3D
 AudioStreamPlayer3D
 AudioStreamPlayer
 CollisionShape3D
-Area3D
-Node3D
