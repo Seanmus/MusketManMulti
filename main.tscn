@@ -16,9 +16,6 @@ albedo_color = Color(0.997201, 0.41946107, 0.09092306, 1)
 size = Vector3(2382.0234, 13.796448, 2329.5032)
 
 [sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_5vw27"]
-properties/0/path = NodePath(".:playerNames")
-properties/0/spawn = true
-properties/0/replication_mode = 1
 
 [node name="Main" type="Node3D" unique_id=744967066]
 script = ExtResource("1_ig7tw")

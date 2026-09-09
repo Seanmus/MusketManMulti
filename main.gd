@@ -5,8 +5,6 @@ var peer = ENetMultiplayerPeer.new()
 @onready var cam = $Camera2D
 @onready var UI = $Ui
 
-@export var playerNames : Dictionary[String, String] = {}
-
 func _on_host_pressed() -> void:
 	peer.create_server(25565)
 	multiplayer.multiplayer_peer = peer
@@ -25,8 +23,7 @@ func _on_join_pressed() -> void:
 func add_player(id = 1):
 	var player = player_scene.instantiate()
 	player.name = str(id)
-	playerNames.get_or_add(player.name, $Ui/VBoxContainer/Player_Name.text)
-	player.gamer_tag = playerNames[player.name]
+	Manager._add_gamer_tag(player.name, $Ui/VBoxContainer/Player_Name.text)
 	print(player.gamer_tag)
 	Manager._add_player_to_score_board.rpc(player.name)
 	print(Manager.scores)

@@ -7,7 +7,7 @@ func _process(delta: float) -> void:
 	_update_score()
 
 func _update_score():
-	if(!Manager):
+	if(!Manager) || !is_multiplayer_authority():
 		print("Manager is null")
 		return
 	print(main)

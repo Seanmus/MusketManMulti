@@ -63,7 +63,7 @@ func _physics_process(delta):
 	if dead:
 		return
 	cam.current = is_multiplayer_authority()
-	$GamerTag.text = gamer_tag
+	$GamerTag.text = Manager._get_gamer_tag(self)
 	#var cameraInput = Input.get_vector("look_left", "look_right", "look_up", "look_down")
 	#if cameraInput:
 		#pass

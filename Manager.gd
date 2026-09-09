@@ -36,16 +36,28 @@ var isFinalLevel
 var isCrossHairEnabled = true
 
 @export var scores : Dictionary[String, int] = {}
-
+@export var playerNames : Dictionary[String, String] = {}
 
 
 func _ready():
 	AudioServer.set_bus_volume_db(audioBus, -30)
 
-@rpc("authority", "call_local", "reliable")
+@rpc("authority", "call_remote", "reliable")
 func _add_player_to_score_board(player):
 	scores.get_or_add(player, 0)
 
+@rpc("authority","call_remote", "reliable")
+func _add_gamer_tag(player,tag):
+	playerNames.get_or_add(player, tag )
+
+@rpc("authority","call_remote", "reliable")
+func _get_gamer_tag(player):
+	print(playerNames)
+	if playerNames.has(player.name):	
+		return playerNames[player.name]
+	else:
+		return "steve"
+		
 func _physics_process(delta):
 	totalTime += delta
 	roundTime += delta
