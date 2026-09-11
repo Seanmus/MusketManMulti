@@ -1,7 +1,4 @@
-res://main.tscn
-res://player.gd
-res://main.gd
-res://Player/player.tscn
-res://Player/ui.gd
 res://Manager.gd
 res://manager.tscn
+res://Player/ui.gd
+res://Player/player.tscn

@@ -42,9 +42,11 @@ var isCrossHairEnabled = true
 func _ready():
 	AudioServer.set_bus_volume_db(audioBus, -30)
 
-@rpc("authority", "call_remote", "reliable")
+@rpc("any_peer", "call_local", "reliable")
 func _add_player_to_score_board(player):
 	scores.get_or_add(player, 0)
+	print("adding score for" + str(player))
+	print(scores)
 
 @rpc("authority","call_remote", "reliable")
 func _add_gamer_tag(player,tag):
@@ -52,7 +54,7 @@ func _add_gamer_tag(player,tag):
 
 @rpc("authority","call_remote", "reliable")
 func _get_gamer_tag(player):
-	print(playerNames)
+	#print(playerNames)
 	if playerNames.has(player.name):	
 		return playerNames[player.name]
 	else:
@@ -62,12 +64,12 @@ func _physics_process(delta):
 	totalTime += delta
 	roundTime += delta
 	
-@rpc("authority", "call_remote", "reliable")
+@rpc("any_peer", "call_local", "reliable")
 func _update_score(player, object_to_get_score):	
-	scores[player.name] += 1
-	print(scores)
-	#score_changed.emit()
-
-@rpc("authority", "call_remote", "reliable")
-func _get_score():
-	return scores
+	if(scores.has(player)):
+		scores[player] += 1
+		print("score match found")
+	else:
+		print("no score match found")
+		#print(scores)
+		#score_changed.emit()

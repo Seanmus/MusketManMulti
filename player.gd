@@ -142,7 +142,7 @@ func _on_hurt_box_body_entered(body: Node3D) -> void:
 			print("Name " + str(name))
 			#print("MultiplayerId " + str(multiplayer_id))
 			#main._update_score.rpc(name, 1)
-			Manager._update_score(self, body)
+			Manager._update_score.rpc(self.name, body)
 			dead = true
 			print("that hurt!")
 			$DeadPanel.visible = true
